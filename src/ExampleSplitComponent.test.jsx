@@ -1,7 +1,7 @@
 import React from "react";
 import { SplitFactory } from "@splitsoftware/splitio-react";
 import ExampleSplitComponent from "./ExampleSplitComponent";
-import { render, waitForElement, getByText } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 it("renders the proper output based on the Split treatment", async () => {
   const splitConfig = {
@@ -15,19 +15,14 @@ it("renders the proper output based on the Split treatment", async () => {
     },
   };
 
-  const { container } = render(
+  const { findByText } = render(
     <SplitFactory config={splitConfig}>
       <ExampleSplitComponent splits={["test-feature-on", "test-feature-off"]} />
     </SplitFactory>
   );
 
-  const [ featureOn, featureOff ] = await waitForElement(
-    () => [
-      getByText(container, "Split test-feature-on is on"),
-      getByText(container, "Split test-feature-off is off"),
-    ],
-    { container }
-  );
+  const featureOn = await findByText("Split test-feature-on is on");
+  const featureOff = await findByText("Split test-feature-off is off");
 
   expect(featureOn).toBeTruthy();
   expect(featureOff).toBeTruthy();
