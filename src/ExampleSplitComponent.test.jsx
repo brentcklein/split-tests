@@ -1,6 +1,6 @@
 import React from "react";
 import { SplitFactory } from "@splitsoftware/splitio-react";
-import SplitComponent from "./SplitComponent";
+import ExampleSplitComponent from "./ExampleSplitComponent";
 import { render, waitForElement, getByText } from "@testing-library/react";
 
 it("renders the proper output based on the Split treatment", async () => {
@@ -17,7 +17,7 @@ it("renders the proper output based on the Split treatment", async () => {
 
   const { container } = render(
     <SplitFactory config={splitConfig}>
-      <SplitComponent splits={["test-feature-on", "test-feature-off"]} />
+      <ExampleSplitComponent splits={["test-feature-on", "test-feature-off"]} />
     </SplitFactory>
   );
 

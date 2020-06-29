@@ -3,7 +3,7 @@ import './App.css';
 
 import { SplitFactory } from "@splitsoftware/splitio-react";
 
-import SplitComponent from "./SplitComponent";
+import ExampleSplitComponent from "./ExampleSplitComponent";
 
 function App() {
   const splitConfig = {
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <SplitFactory config={splitConfig}>
-      <SplitComponent splits={["prod-feature-1", "prod-feature-2"]} />
+      <ExampleSplitComponent splits={["prod-feature-1", "prod-feature-2"]} />
     </SplitFactory>
   );
 }

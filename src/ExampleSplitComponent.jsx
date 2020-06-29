@@ -2,7 +2,7 @@ import React from "react";
 
 import { SplitTreatments } from "@splitsoftware/splitio-react";
 
-const SplitComponent = ({ splits }) => {
+const ExampleSplitComponent = ({ splits }) => {
   return splits.map(split => {
     return (
       <SplitTreatments names={[split]} key={split}>
@@ -16,4 +16,4 @@ const SplitComponent = ({ splits }) => {
   });
 }
 
-export default SplitComponent;
+export default ExampleSplitComponent;
