@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Small create-react-app repo to demonstrate a problem with unit testing using @splitsoftware/splitio-react. Run `yarn start` to see expected behavior, then run `yarn test` to see unit test fail unexpectedly. Relevant source code in `src/App.jsx`, `src/SplitComponent.jsx`, and `src/SplitComponent.test.jsx`.
 
 ## Available Scripts
 
